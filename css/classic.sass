@@ -1,25 +1,38 @@
 
 @import 'variables'
+@import 'mixins'
 @import 'header'
 @import 'footer'
 
+
+
+    
 body
     background-color: $basegreenbright
 
 article
-    height: 100vh
+    @include textFormat
+    @include roundup
+    height: 40vh
     padding: $basepad
-    margin: $basemar
+    margin: auto
     background-color: $basemidtone
+    width: 80%
+
     header
         text-align: center
+        box-shadow: 5px 10px $basegrey
+        background-color: $basegreenbright
+
+.full
+    width: inherit
 
 section
     background-color: $sectioncol
     padding: $basepad
 
 #galery
-    padding: 0
+    padding-bottom: 4px
     background-color: $basegrey
 
 .row 

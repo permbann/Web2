@@ -1,4 +1,7 @@
 header nav ul {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -11,6 +14,8 @@ header nav ul li {
 }
 
 header nav ul li a {
+  font-family: Tahoma, Geneva, sans-serif;
+  font-size: 20px;
   display: block;
   color: white;
   text-align: center;
@@ -19,7 +24,7 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-  background-color: #c1946a;
+  background-color: #a7998d;
 }
 
 footer {
@@ -36,18 +41,30 @@ footer p {
 }
 
 body {
-  background-color: #82b74b;
+  background-color: rgba(73, 97, 48, 0.816);
 }
 
 article {
-  height: 100vh;
+  font-family: Tahoma, Geneva, sans-serif;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  height: 40vh;
   padding: 15px;
-  margin: 10px;
-  background-color: #c1946a;
+  margin: auto;
+  background-color: #a7998d;
+  width: 80%;
 }
 
 article header {
   text-align: center;
+  -webkit-box-shadow: 5px 10px #3e4444;
+          box-shadow: 5px 10px #3e4444;
+  background-color: rgba(73, 97, 48, 0.816);
+}
+
+.full {
+  width: inherit;
 }
 
 section {
@@ -56,7 +73,7 @@ section {
 }
 
 #galery {
-  padding: 0;
+  padding-bottom: 4px;
   background-color: #3e4444;
 }
 

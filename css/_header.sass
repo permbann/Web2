@@ -1,6 +1,7 @@
 header
     nav
         ul
+            @include roundup
             list-style-type: none
             margin: 0
             padding: 0
@@ -10,11 +11,13 @@ header
             li
                 float: left
                 a
+                    @include textFormat
+                    font-size: 20px
                     display: block
                     color: white
                     text-align: center
                     padding: 14px 16px
                     text-decoration: none
                     &:hover
-                        background-color: $basemidtone;
+                        background-color: $basemidtone
 
