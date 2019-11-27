@@ -60,30 +60,6 @@ footer p {
   color: #f0eaea;
 }
 
-.darkTable tbody td a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  position: relative;
-}
-
-.darkTable tbody td a::after {
-  content: "";
-  background: white;
-  mix-blend-mode: exclusion;
-  width: 100%;
-  height: 0;
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  -webkit-transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-  transition: all 0.3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-}
-
-.darkTable tbody td a:hover::after {
-  height: calc(100% + 5px);
-}
-
 .darkTable tr:nth-child(even) {
   background: #c2c2c2;
 }
@@ -152,7 +128,6 @@ section {
   padding: 15px;
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 20px;
-  height: 100vh;
 }
 
 #galery {

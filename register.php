@@ -4,7 +4,7 @@ if ( isset( $_SESSION[ 'userid' ] ) ) {
   header( "Location: login.php" );
   die();
 }
-$pdo = new PDO( 'mysql:host=localhost;dbname=users', 'root' );
+$pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachheit halber keine sql nutzer mit passwort
 ?>
 
 <!DOCTYPE HTML>
@@ -31,12 +31,10 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=users', 'root' );
           $email = addslashes( $_POST[ 'email' ] );
           $passwort = $_POST[ 'passwort' ];
           $passwort2 = $_POST[ 'passwort2' ];
-          $birthdate = $_POST['bday'];
 
           if ( !filter_var( $email, FILTER_VALIDATE_EMAIL ) ) {
-            echo '<p class="fail">Bitte eine gültige E-Mail-Adresse eingeben<p>';
+            echo '<p class="fail">Please enter valid email adress<p>';
             $error = true;
-            
           }
           if ( strlen( $username ) == 0 ) {
             echo '<p class="fail">Username missing<p>';
@@ -53,10 +51,10 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=users', 'root' );
             $error = true;
             
           }
-
+//----------------------------------username überprüfen
           //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
           if ( !$error ) {
-            $statement = $pdo->prepare( "SELECT * FROM entries WHERE email = :email" );
+            $statement = $pdo->prepare( "SELECT * FROM users WHERE user_email = :email" );
             $result = $statement->execute( array( 'email' => $email ) );
             $user = $statement->fetch();
 
@@ -69,10 +67,12 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=users', 'root' );
           //Keine Fehler, wir können den Nutzer registrieren
           if ( !$error ) {
             $passwort_hash = password_hash( $passwort, PASSWORD_DEFAULT );
+//--------------------user_id	u_name	user_pass	user_email	user_date	user_level
 
-            $statement = $pdo->prepare( "INSERT INTO entries (email, p_word, b_date, u_name, grp) VALUES (:email, :passwort, :bday, :username, :grp)" );
-            $result = $statement->execute( array( 'email' => $email, 'passwort' => $passwort_hash, 'bday' => $birthdate, 'username' => $username, 'grp' => "base" ) );
-            var_dump($birthdate);
+            $statement = $pdo->prepare("INSERT INTO users (user_email, user_pass, u_name, user_date, user_level) 
+                                        VALUES (:email, :passwort, :username, :regtime, :lvl)" );
+            $result = $statement->execute( array( 'email' => $email, 'passwort' => $passwort_hash, 'username' => $username, 'regtime' => date('Y-m-d H:i:s'), 'lvl' => 0 ) );
+            
             if ( $result ) {
               //echo '<div class="regform">Registration successful. <a href="loginscreen.php">Login</a></div>';
               $showFormular = false;
@@ -123,17 +123,8 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=users', 'root' );
                   <input type="password" size="40" maxlength="250" name="passwort2" class="text">
                 </div>
                 <div class="label">
-                    <label >Birthdate:</label>
-                </div>
-                <div class="field">
-                  <input type="date" name="bday">
-                </div>
-                <div class="label">
                   <label > Continue to <a class="loginlink" href="loginscreen.php">Login</a>!</label>
-                </div>
-
-                
-                
+                </div>                
                 <div class="submit">
                   <input type="submit" value="Register" class="button">
                 </div>

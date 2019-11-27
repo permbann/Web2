@@ -1,19 +1,20 @@
 <?php
 session_start();
-$pdo = new PDO( 'mysql:host=localhost;dbname=users', 'root' );
+$pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' );
 
 if ( isset( $_GET[ 'login' ] ) ) {
   $email = $_POST[ 'email' ];
   $passwort = $_POST[ 'passwort' ];
-
-  $statement = $pdo->prepare( "SELECT * FROM entries WHERE email = :email" );
+//--------------------user_id	u_name	user_pass	user_email	user_date	user_level
+  $statement = $pdo->prepare( "SELECT * FROM users WHERE user_email = :email" );
   $result = $statement->execute( array( 'email' => $email ) );
   $user = $statement->fetch();
-var_dump(password_verify( $passwort, $user[ 'p_word' ] ));
+var_dump(password_verify( $passwort, $user[ 'user_pass' ] ));
   //Überprüfung des Passworts
-  if ( $user !== false && password_verify( $passwort, $user[ 'p_word' ] ) ) {
-    $_SESSION[ 'userid' ] = $user[ 'u_name' ];
-    $url = 'register.php';
+  if ( $user !== false && password_verify( $passwort, $user[ 'user_pass' ] ) ) {
+    $_SESSION[ 'userid' ] = $user[ 'user_id' ];
+    $_SESSION['user_level'] = $user['user_level'];
+    $url = 'help.php';
     header( "Location: $url" );
     //die( 'Login erfolgreich. Weiter zu <a href="/geheim.php">internen Bereich</a>' );
   } else {

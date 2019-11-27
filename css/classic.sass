@@ -3,7 +3,7 @@
 @import 'mixins'
 @import 'header'
 @import 'footer'
-
+@import 'tablestyle'
 
 
     
@@ -11,7 +11,7 @@ body
     background-color: $basegreenbright
 
 article
-    @include textFormat
+    @include textFormat(20px)
     @include roundup
     height: 40vh
     padding: $basepad
@@ -30,6 +30,8 @@ article
 section
     background-color: $sectioncol
     padding: $basepad
+    @include textFormat(15px)
+    height: 100vh
 
 #galery
     padding-bottom: 4px
@@ -54,3 +56,4 @@ section
 
 aside
     margin-bottom: 3rem
+    @include textFormat(10px)

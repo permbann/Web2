@@ -15,7 +15,11 @@
 	<section>
         <h2>Support contact</h2>
         <p>Email: Support@forumplace.project</p>
-
+        <p><a href='create_cat.php'>create kategory</a></p>
+        <p><a href='create_topic.php'>create tpoic</a></p>
+        <p><a href='topic_view.php?id=1'>view topic</a></p>
+        <p><a href='category_view.php'>category view</a></p>
+        <p><a href='cat_over.php'>category overview</a></p>
 	</section>
 
     <?php include "footer.php"?>
