@@ -20,7 +20,11 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
 <body>
     <?php include "header.php"?>
 	
+	<div id="posts">
+
+
 	<section>
+
     <?php
         $topid = $_GET['id'];
         $sql = "SELECT
@@ -81,7 +85,7 @@ foreach ($pdo->query($sql2) as $row)
     ?>
     </form>
 	</section>
-
+    </div>
     <?php include "footer.php"?>
 
 </body>

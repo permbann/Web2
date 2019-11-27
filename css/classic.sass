@@ -4,12 +4,12 @@
 @import 'header'
 @import 'footer'
 @import 'tablestyle'
+@import 'sidebar'
 
 
     
 body
-    background-color: $basegreenbright
-
+    background-color: #24181822
 article
     @include textFormat(20px)
     @include roundup
@@ -57,3 +57,9 @@ section
 aside
     margin-bottom: 3rem
     @include textFormat(10px)
+
+.subject, .post
+    width: 100%
+    margin: 10px
+    padding: $basepad
+    background-color: $grey2

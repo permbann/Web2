@@ -19,7 +19,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
 
 <body>
     <?php include "header.php"?>
-	
+    <div id="posts">
 	<section>
 
 <?php
@@ -107,7 +107,7 @@ else
 }
 ?>
 	</section>
-
+</div>
 <?php include "footer.php"?>
 
 </body>

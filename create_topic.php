@@ -19,7 +19,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
 
 <body>
     <?php include "header.php"?>
-	
+    <div id="posts">
 	<section>
 	
     <?php
@@ -72,18 +72,22 @@ echo '<h2>Create a topic</h2>';
             {
          
                 echo '<form method="post" action="">
-                    Subject: <input type="text" name="topic_subject" />
-                    Category:'; 
+                    <div class="subject">
+                        Subject: <input type="text" name="topic_subject" />
+                        Category:'; 
                  
                 echo '<select name="topic_cat">';
                     foreach ($pdo->query($sql) as $row) {
                         echo '<option value="' . $row['cat_id'] . '">' . $row['cat_name'] . '</option>';
                     }                    
-                echo'</select>'; 
+                echo'</select>
+                    </div>'; 
                      
-                echo 'Message: <textarea name="post_content" /></textarea>
-                    <input type="submit" value="Create topic" />
-                 </form>';
+                echo '<div class="post">
+                        Message: <textarea name="post_content" /></textarea>
+                        <input type="submit" value="Create topic" />
+                    </div>
+                    </form>';
                 }
             }
     }
@@ -149,7 +153,7 @@ echo '<h2>Create a topic</h2>';
         } //Ende von if($showFormular)
         ?>
 	</section>
-
+    </div>
     <?php include "footer.php"?>
 
 </body>

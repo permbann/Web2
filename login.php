@@ -36,8 +36,8 @@ var_dump(password_verify( $passwort, $user[ 'user_pass' ] ));
 
 <body>
 
-    <?php include "header.php"?>
-	
+  <?php include "header.php"?>
+  <div id="posts">	
 	<section>
         <?php
         if ( isset( $errorMessage ) ) {
@@ -71,8 +71,8 @@ var_dump(password_verify( $passwort, $user[ 'user_pass' ] ));
           </form>
         </div>
 	</section>
-
-    <?php include "footer.php"?>
+  </div>
+  <?php include "footer.php"?>
 
 </body>
 

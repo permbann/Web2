@@ -6,5 +6,9 @@
 </aside>
 
 <footer>
+	<button onclick="topFunction()" id="myBtn">
+		<img src="pic/arrowtop.png" width="50px">
+	</button>
+	<script type="text/javascript" src="js/sidebar.js"></script> 
 	<p>Copyright 2019 Luana Juhl & Lukas Schult</p>
 </footer>

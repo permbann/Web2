@@ -19,7 +19,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
 
 <body>
     <?php include "header.php"?>
-	
+		<div id="posts">
 	<section>
 	
     <?php
@@ -64,9 +64,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
                 <div class="field">
                 <textarea size="80" maxlength="250"name='cat_desc' ></textarea>
                 </div>
-                <div class="label">
-                  <label > Continue to <a class="loginlink" href="loginscreen.php">Login</a>!</label>
-                </div>                
+                
                 <div class="submit">
                   <input type="submit" value="add_category" class="button">
                 </div>
@@ -82,7 +80,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
         }
         ?>
 	</section>
-
+      </div>
     <?php include "footer.php"?>
 
 </body>

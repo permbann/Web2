@@ -11,7 +11,7 @@
 <body>
 
     <?php include "header.php"?>
-	
+    <div id="posts">
 	<section>
         <h2>Support contact</h2>
         <p>Email: Support@forumplace.project</p>
@@ -21,7 +21,7 @@
         <p><a href='category_view.php'>category view</a></p>
         <p><a href='cat_over.php'>category overview</a></p>
 	</section>
-
+    </div>
     <?php include "footer.php"?>
 
 </body>

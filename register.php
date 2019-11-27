@@ -20,7 +20,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
 <body>
 
     <?php include "header.php"?>
-	
+		<div id="posts">
 	<section>
 	
     <?php
@@ -136,7 +136,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
         } //Ende von if($showFormular)
         ?>
 	</section>
-
+  </div>
     <?php include "footer.php"?>
 
 </body>

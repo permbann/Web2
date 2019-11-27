@@ -18,10 +18,9 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
 </head>
 
 <body>
-    <?php include "header.php"?>
-	
+<?php include "header.php"?>
+<div id="posts">	
 <section>
-<div>
 <?php
 //$sql = "SELECT
 //            cat_id,
@@ -87,8 +86,8 @@ else
     }
 }
 ?>
-</div>
 </section>
+</div>
 
 <?php include "footer.php"?>
 </body>
