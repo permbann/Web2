@@ -1,0 +1,24 @@
+header
+    nav
+        ul    
+            position: fixed
+            width: 99%
+            @include roundup
+            list-style-type: none
+            margin: 0
+            //smargin-top: -2vh
+            padding: 0
+            overflow: hidden
+            background-color: $nav-col
+            margin-bottom: 3px
+            li
+                float: right
+                a
+                    @include textFormat(20px)
+                    display: block
+                    color: white
+                    text-align: center
+                    padding: 14px 16px
+                    text-decoration: none
+                    &:hover
+                        background-color: $post-col

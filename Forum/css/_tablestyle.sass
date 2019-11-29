@@ -1,0 +1,88 @@
+.darkTable 
+    font-family: "Arial Black", Gadget, sans-serif
+    border: 2px solid $black1
+    background-color: $grey1
+    width: 100%
+    height: 250px
+    text-align: center
+    vertical-align: center
+    border-collapse: collapse
+ 
+    td, th  
+        border: 1px solid $grey1
+        padding: 3px 2px 
+        word-wrap: break-word
+
+    tbody td 
+        font-size: 13px
+        color: $white1
+        max-width: 200px
+        a
+            display: block
+            color: white
+            text-decoration: none
+            position: relative
+        a::after
+            content: ""
+            background: white
+            mix-blend-mode: exclusion
+            width: 100%
+            height: 0
+            position: absolute
+            bottom: -4px
+            left: 0
+            transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)
+        a:hover::after
+            height: calc(100% + 20px)
+
+    tr:nth-child(even) 
+        background: $grey2
+
+    thead 
+        background: $black1
+        border-bottom: 3px solid $black1
+
+    thead th 
+        font-size: 15px
+        font-weight: bold
+        color: $white1
+        text-align: center
+        border-left: 2px solid $grey1
+
+    thead th:first-child 
+        border-left: none
+
+    tfoot 
+        font-size: 12px
+        font-weight: bold
+        color: $white1
+        background: $black1
+        background: -moz-linear-gradient(top, #404040 0%, #191919 66%, $black1 100%)
+        background: -webkit-linear-gradient(top, #404040 0%, #191919 66%, $black1 100%)
+        background: linear-gradient(to bottom, #404040 0%, #191919 66%, $black1 100%)
+        border-top: 1px solid $grey1
+
+    tfoot td 
+        font-size: 12px
+        textarea
+            border: 3px solid #cccccc
+            padding: 5px
+            font-family: Tahoma, sans-serif
+            width: 80%
+            background-color: $grey1
+            color: white
+
+.cat_text 
+    padding-bottom: 10px
+
+
+.leftpart
+    overflow: hidden
+    text-align: left
+
+
+.rightpart
+    vertical-align: center
+    text-align: left
+
+    

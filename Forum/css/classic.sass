@@ -1,0 +1,114 @@
+
+@import 'variables'
+@import 'mixins'
+@import 'header'
+@import 'footer'
+@import 'tablestyle'
+@import 'sidebar'
+
+html
+    height: 100%
+
+body
+    background-color: $post-col
+    height: 100%
+article
+    @include textFormat(20px)
+    @include roundup
+    height: 40vh
+    padding: $basepad
+    margin: auto
+    background-color: $base
+    width: 80%
+
+    header
+        text-align: center
+        box-shadow: 5px 10px $basegrey
+        background-color: $basegreenbright
+
+.full
+    width: inherit
+
+section
+    background-color: $base
+    padding-top: 50px
+    @include textFormat(15px)
+    text-align: center
+    color: white
+    display: block
+    //overflow: auto
+    position: absolut
+    overflow: hidden
+
+a
+    color: $blue
+
+//div
+//   margin-bottom: 5px
+
+.button
+    padding: 7px
+    border: none
+
+#galery
+    padding-bottom: 4px
+    background-color: $basegrey
+
+.row 
+    display: flex
+    flex-wrap: wrap
+    padding: 0 4px
+
+
+.column 
+    flex: 25%
+    max-width: 24%
+    padding: 0 4px
+
+
+.column img 
+    margin-top: 8px
+    vertical-align: middle
+    width: 100%
+
+.subject, .post
+    width: 100%
+    margin: 10px
+    padding: $basepad
+    background-color: $grey2
+    text-align: left
+    vertical-align: top
+
+
+.input
+    margin-left: 10px
+    padding-right: 40px
+
+.topic_form
+    margin-right: 30px
+
+#posts
+    border-bottom: 0
+    background-color: $post-col
+    margin: auto 
+    margin-top: 5vh
+    width: 70%
+    @include baseshadow($sidebar-col)
+
+#cat-form
+    padding-top: 10vh
+    display: inline-block
+    
+.create_catdiv
+    margin: 10vh
+    padding: 2vh
+    @include baseshadow($post-col)
+
+#create_cattext, #create_catname
+    @include baseshadow($sidebar-col)
+    font-family: Tahoma, sans-serif
+    width: 90%
+    margin-top: 2vh
+    background-color: $grey1
+    color: white
+    height: 5vh
