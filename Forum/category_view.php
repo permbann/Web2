@@ -8,20 +8,21 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachhe
 ?>
 
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>SassTest</title>
+    <title>ForumPlace</title>
     <link rel="stylesheet" href="css/classic.css">
 </head>
 
 <body>
-    <?php include "header.php"?>
-    <?php include "sidebar.php"?>
-    <div id="posts">
-	<section>
+
+<?php include "header.php"?>
+<?php include "sidebar.php"?>
+
+<div id="posts">
+<section>
 
 <?php
 
@@ -36,9 +37,6 @@ $sql = "SELECT
             cat_id = " . $_GET['id'];
 
 $result = $pdo->query($sql);
-
-
-
 
 if(!isset($result))
 {
@@ -71,7 +69,7 @@ else
         if(!$result)
         {
             echo '<h3>No topics in this Category or The topics could not be displayed, please try again later.</h3>';
-            if($_SESSION['user_level'] > 1)
+            if($_SESSION['user_level'] > 1) //higher than base user
             {
                 echo '<h3><a href="create_topic.php?id="'.$_GET['id'].'">Create new Topic</a></h3>';
             }
@@ -111,8 +109,10 @@ else
     }
 }
 ?>
-	</section>
+
+</section>
 </div>
+
 <?php include "footer.php"?>
 
 </body>

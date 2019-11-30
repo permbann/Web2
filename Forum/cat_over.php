@@ -4,31 +4,28 @@ if (!isset( $_SESSION[ 'userid' ] ) ) {
     header( "Location: start.php" );
     die();
 }
-$pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachheit halber keine sql nutzer mit passwort
+$pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); 
 ?>
 
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>SassTest</title>
+    <title>ForumPlace</title>
     <link rel="stylesheet" href="css/classic.css">
 </head>
 
 <body>
+
 <?php include "header.php"?>
 <?php include "sidebar.php"?>
+
 <div id="posts">	
 <section>
 <?php
-//$sql = "SELECT
-//            cat_id,
-//            cat_name,
-//            cat_desc
-//        FROM
-//            categories";
+
+//select categories with last created topic in each categorie
 $sql = "SELECT cat_id, cat_name, cat_desc, topic_subject, topic_id, MAX(topic_date) AS lastdate
 FROM categories LEFT JOIN topics ON topic_cat = cat_id
 GROUP BY cat_id;";
@@ -58,7 +55,7 @@ else
                 <th>Last topic</th>
               </tr>
               </thead>';
-        if($_SESSION['user_level'] == 5)
+        if($_SESSION['user_level'] == 5) //if admin
         {
             echo '<tfoot>
                 <td>Create a new</td>

@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html>
 
 <head>
@@ -9,24 +8,27 @@
 </head>
 
 <body>
-    <?php include "header.php"?>
-	<div id="posts">
-	    <section>
-        <h1>Welcome to The Forum Place</h1>
-        </section>
-        <section id="start">
-            <h3>Are you new here? please <a class="active" href="register.php">Register</a></h3>
-        </section>
-        <section id="start">
-            <h3>Just getting back? <a class="active" href="login.php">Login</a></h3>
-        </section>
-    </div>
-    <div id="header">			  
-	<div id="banner">
-		<img src="pic/banner.png" alt="Banner" width="1000" height="200">
+
+<?php include "header.php"?>
+
+<div id="posts">
+<section>
+    <h1>Welcome to The Forum Place</h1>
+</section>
+<section id="start">
+    <h3>Are you new here? please <a class="active" href="register.php">Register</a></h3>
+</section>
+<section id="start">
+    <h3>Just getting back? <a class="active" href="login.php">Login</a></h3>
+</section>
+</div>
+<div id="header">			  
+    <div id="banner">
+	    <img src="pic/banner.png" alt="Banner" width="1000" height="200">
 	</div>
 </div>
-    <?php include "footer.php"?>
+
+<?php include "footer.php"?>
 
 </body>
 
