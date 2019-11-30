@@ -12,7 +12,7 @@ $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' );
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>SassTest</title>
+    <title>ForumPlace</title>
     <link rel="stylesheet" href="css/classic.css">
 </head>
 
@@ -133,7 +133,7 @@ else
                                         VALUES(:post_c,:post_d,:post_t,:post_b)");
 
             $result = $statement->execute(array( 'post_c' => addslashes($_POST['post_content']),'post_d' => $date, 'post_t' => $topicid, 'post_b' => $_SESSION['userid']));
-            
+
             if(!isset($result))
             {
                 //something went wrong, display the error
