@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ( isset( $_SESSION[ 'userid' ] ) ) {
-  header( "Location: login.php" );
+  header( "Location: help.php" );
   die();
 }
 $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachheit halber keine sql nutzer mit passwort

@@ -1,11 +1,8 @@
 header nav ul {
   position: fixed;
-  width: 99%;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 10px;
+  width: 98%;
   list-style-type: none;
-  margin: 0;
+  margin: 5px;
   padding: 0;
   overflow: hidden;
   background-color: #272530;
@@ -50,7 +47,7 @@ footer p {
 .aboutwrap {
   position: relative;
   padding-bottom: 2vh;
-  min-height: 50%;
+  min-height: 70%;
 }
 
 .about {
@@ -180,9 +177,7 @@ aside {
   font-size: 14px;
   width: 980px;
   margin: auto;
-  margin-top: 10px;
   padding-top: 70px;
-  margin-bottom: 1vh;
 }
 
 #banner {
@@ -276,26 +271,23 @@ html {
 body {
   background-color: #85768f;
   height: 100%;
+  margin: 0;
 }
 
-article {
-  font-family: Tahoma, Geneva, sans-serif;
-  font-size: 25px;
-  border: 1px solid;
-  border-radius: 5px;
-  padding: 10px;
-  height: 40vh;
-  padding: 15px;
-  margin: auto;
-  background-color: #4f4a5f;
-  width: 80%;
-}
-
-article header {
+body header {
   text-align: center;
   -webkit-box-shadow: 5px 10px #777786;
           box-shadow: 5px 10px #777786;
   background-color: #dfebd6;
+}
+
+#start {
+  -webkit-box-shadow: 0 0 15px 10px #272530;
+          box-shadow: 0 0 15px 10px #272530;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .full {
@@ -304,7 +296,6 @@ article header {
 
 section {
   background-color: #4f4a5f;
-  padding-top: 50px;
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 20px;
   text-align: center;
@@ -312,6 +303,8 @@ section {
   display: block;
   position: absolut;
   overflow: hidden;
+  -webkit-box-shadow: 0 0 15px 10px #272530;
+          box-shadow: 0 0 15px 10px #272530;
 }
 
 a {
@@ -373,14 +366,11 @@ a {
   border-bottom: 0;
   background-color: #85768f;
   margin: auto;
-  margin-top: 5vh;
   width: 70%;
-  -webkit-box-shadow: 0 0 15px 10px #272530;
-          box-shadow: 0 0 15px 10px #272530;
+  padding-top: 10vh;
 }
 
 #cat-form {
-  padding-top: 10vh;
   display: inline-block;
 }
 

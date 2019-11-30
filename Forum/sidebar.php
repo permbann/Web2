@@ -28,9 +28,8 @@
 		</button>
 	  </div>
 
-
-	<div id="header">			  
-		<div id="banner">
-			 <img src="pic/banner.png" alt="Banner" width="1000" height="200">
-		</div>
+<div id="header">			  
+	<div id="banner">
+		<img src="pic/banner.png" alt="Banner" width="1000" height="200">
 	</div>
+</div>

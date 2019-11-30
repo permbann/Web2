@@ -1,7 +1,7 @@
 <?php
 session_start();
 if ( !isset( $_SESSION[ 'userid' ] ) ) {
-  header( "Location: login.php" );
+  header( "Location: start.php" );
   die();
 }
 $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachheit halber keine sql nutzer mit passwort
@@ -70,7 +70,11 @@ else
         $result = $pdo->query($sql)->fetch();
         if(!$result)
         {
-            echo 'The topics could not be displayed, please try again later.';
+            echo '<h3>No topics in this Category or The topics could not be displayed, please try again later.</h3>';
+            if($_SESSION['user_level'] > 1)
+            {
+                echo '<h3><a href="create_topic.php?id="'.$_GET['id'].'">Create new Topic</a></h3>';
+            }
         }
         else
         {
@@ -82,11 +86,11 @@ else
                         <th>Created at</th>
                       </tr>
                       </thead>';
-                if($_SESSION['user_level'] == 5)
+                if($_SESSION['user_level'] > 1)
                 {
                     echo '<tfoot>
                             <td>Create a new</td>
-                            <td><a href="create_cat.php">Category</a></td>
+                            <td><a href="create_topic.php?id=' . $_GET['id'] . '">Topic</a></td>
                             </tfoot>';
                 }
                 echo '<tbody>'; 

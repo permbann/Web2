@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset( $_SESSION[ 'userid' ] ) ) {
-  header( "Location: login.php" );
+  header( "Location: start.php" );
   die();
 }
 $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachheit halber keine sql nutzer mit passwort
@@ -77,10 +77,17 @@ echo '<h2>Create a topic</h2>';
                         Subject: <input class="input" type="text" name="topic_subject" />
                         &emsp;&emsp;
                         Category: '; 
-                 
                 echo '<select class="input" name="topic_cat">';
                     foreach ($pdo->query($sql) as $row) {
-                        echo '<option value="' . $row['cat_id'] . '">' . $row['cat_name'] . '</option>';
+                        echo '<option';
+                        if(isset($_GET['id']))
+                        {
+                            if($_GET['id'] == $row['cat_id'])
+                            {
+                                echo ' selected="selected"';
+                            }
+                        }
+                        echo ' value="' . $row['cat_id'] . '">' . $row['cat_name'] . '</option>';
                     }                    
                 echo'</select>
                     </div>'; 

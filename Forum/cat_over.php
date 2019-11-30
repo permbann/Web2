@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (!isset( $_SESSION[ 'userid' ] ) ) {
-    header( "Location: login.php" );
+    header( "Location: start.php" );
     die();
 }
 $pdo = new PDO( 'mysql:host=localhost;dbname=content', 'root' ); //der Einfachheit halber keine sql nutzer mit passwort
@@ -37,6 +37,10 @@ $result = $pdo->query($sql);
 if(!$result)
 {
     echo 'The categories could not be displayed, please try again later.';
+    if($_SESSION['user_level'] == 5)
+    {
+        echo '<a href="create_cat.php"> Create Category</a>';
+    }
 }
 else
 {   
@@ -69,14 +73,14 @@ else
                     echo("<h3><a href='category_view.php?id=".$row['cat_id']."',".$row['cat_name'] ."</a></h3>".$row['cat_desc']);
                 echo '</td>';
                 
-                echo '<td class="rightpart">';
+                echo '<td >';
                 if(!isset($row['topic_id']))
                 {
                     echo 'no topic jet ;)';
                 }
                 else
                 {
-                    echo '<a href="topic.php?id="'.$row['topic_id'].'">'.$row['topic_subject'].'</a> at '.$row['lastdate'];
+                    echo '<p><a href="topic.php?id="'.$row['topic_id'].'">'.$row['topic_subject'].'</a> at '.$row['lastdate'].'</p>';
                 }
                 echo '</td>';
             echo '</tr>';
