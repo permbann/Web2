@@ -1,13 +1,15 @@
 header
     nav
-        ul
-            @include roundup
+        ul    
+            position: fixed
+            width: 98%
             list-style-type: none
-            margin: 0
+            margin: 5px
             padding: 0
             overflow: hidden
-            background-color: $basegrey
-
+            background-color: $nav-col
+            margin-bottom: 3px
+            z-index: 1
             li
                 float: right
                 a
@@ -18,5 +20,4 @@ header
                     padding: 14px 16px
                     text-decoration: none
                     &:hover
-                        background-color: $basemidtone
-
+                        background-color: $post-col

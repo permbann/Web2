@@ -1,4 +1,3 @@
-
 @import 'variables'
 @import 'mixins'
 @import 'header'
@@ -6,32 +5,48 @@
 @import 'tablestyle'
 @import 'sidebar'
 
-
+html
+    height: 100%
+    background-image: linear-gradient(#64a2be ,#5E5278 ,#181722 )
+    background-attachment: fixed
     
 body
-    background-color: #24181822
-article
-    @include textFormat(20px)
-    @include roundup
-    height: 40vh
-    padding: $basepad
-    margin: auto
-    background-color: $basemidtone
-    width: 80%
+    height: 100%
+    margin: 0
 
     header
         text-align: center
         box-shadow: 5px 10px $basegrey
-        background-color: $basegreenbright
+
+#start
+    @include roundup($nav-col)
+    margin-top: 10px
 
 .full
     width: inherit
 
 section
-    background-color: $sectioncol
-    padding: $basepad
+    padding-top: 30px
+    padding-bottom: 30px
     @include textFormat(15px)
-    height: 100vh
+    text-align: center
+    width: 80%
+    margin: auto
+    color: white
+    display: block
+    position: absolut
+    overflow: hidden
+    @include baseshadow($nav-col)
+
+a
+    color: $blue
+
+div
+   margin-bottom: 5px
+
+.button
+    padding: 7px
+    border: none
 
 #galery
     padding-bottom: 4px
@@ -47,19 +62,44 @@ section
     flex: 25%
     max-width: 24%
     padding: 0 4px
-
-
-.column img 
-    margin-top: 8px
-    vertical-align: middle
-    width: 100%
-
-aside
-    margin-bottom: 3rem
-    @include textFormat(10px)
+    img 
+        margin-top: 8px
+        vertical-align: middle
+        width: 100%
 
 .subject, .post
     width: 100%
     margin: 10px
     padding: $basepad
-    background-color: $grey2
+    background-color: $blue
+    text-align: left
+    vertical-align: top
+
+.input
+    margin-left: 10px
+    padding-right: 40px
+
+.topic_form
+    margin-right: 30px
+
+#posts
+    border-bottom: 0
+    margin: auto 
+    width: 70%
+    padding-top: 10vh
+
+#cat-form
+    display: inline-block
+    
+.create_catdiv
+    margin: 10vh
+    padding: 2vh
+    border: 2px solid white
+
+#create_cattext, #create_catname
+    font-family: Tahoma, sans-serif
+    width: 90%
+    margin-top: 2vh
+    background-color: $grey1
+    color: white
+    height: 5vh

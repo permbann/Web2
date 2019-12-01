@@ -2,22 +2,26 @@
 	font-size: 14px
 	width: 980px
 	margin: auto
-	margin-left: 270px
-	margin-top: 20px
-
-
+	padding-top: 20px
+	
+#banner
+	margin: auto
+	img
+		//@include baseshadow($nav-col)
+	
 .sidebar 
-	margin-top: 20px
+	margin-top: 70px
 	width: 260px
-	height: calc(100vh - 55px)
+	height: calc(100% - 250px)
 	float: left
-	background-color: $sidebar-col
+	background-color: $nav-col
 	position: fixed
 	border: 2px solid black
 	display: block
 	-webkit-transition: 0.3s
 	transition: 0.3s
 	z-index: 1
+	
 
 
 .sidebar 
@@ -36,7 +40,7 @@
 	position: fixed
 	top: 0
 	left: 0
-	margin-top: 13vh
+	margin-top: 10vh
 	background-color: transparent
 	border: none
 	outline: none
@@ -61,12 +65,14 @@
   	list-style-type: none
 
 
-#sidebar-buttons img 
-  	margin-left: 8px
-  	margin-right: 3px
-  	height: 70px
-  	width: 70px
-  	margin-bottom: 10px
+#sidebar-buttons 
+	img 
+  		margin-left: 8px
+  		margin-right: 3px
+  		height: 70px
+  		width: 70px
+  		margin-bottom: 10px
+	list-style-type: none
 
 #myBtn 
 	position: fixed
@@ -78,10 +84,5 @@
 	background-color: transparent
 	border: none
 
-#posts
-	width: 700px
-	height: 1000px
-	background-color: $post-col
-	border: 7px solid white
-	margin: auto
-	margin-top: 35px
+
+
