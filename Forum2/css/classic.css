@@ -195,7 +195,7 @@ aside {
 .sidebar {
   margin-top: 70px;
   width: 260px;
-  height: calc(100% - 230px);
+  height: calc(100% - 250px);
   float: left;
   background-color: #45405c;
   position: fixed;
@@ -304,7 +304,7 @@ section {
   font-family: Tahoma, Geneva, sans-serif;
   font-size: 20px;
   text-align: center;
-  width: 90%;
+  width: 80%;
   margin: auto;
   color: white;
   display: block;
