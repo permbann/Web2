@@ -45,40 +45,40 @@ if ( isset( $_GET[ 'login' ] ) )
 <div id="posts">	
 <section>
 
-<?php
+  <?php
 
-if ( isset( $errorMessage ) ) 
-{
-  echo $errorMessage;
-}
-?>
+    if ( isset( $errorMessage ) ) 
+    {
+      echo $errorMessage;
+    }
+  ?>
 
-<div>
-  <form id="contact-form" action="?login=1" method="post">
-    <ul style="list-style: none;">
-      <li>
-        <div class="label">
-          <label>E-Mail:</label>
-        </div>
-        <div class="field">
-          <input type="email" size="30" maxlength="250" name="email" class="text">
-        </div>
-        <div class="label">
-          <label>Passwod:</label>
-        </div>
-        <div class="field">
-          <input type="password" size="30" maxlength="250" name="passwort" class="text">
-        </div>
-        <div class="label">
-          <label>No Account?<a class="loginlink" href="register.php">Register</a>!</label>
-        </div>
-        <div class="submit">
-          <input type="submit" value="Login" class="button">
-        </div>
-      </li>
-    </ul>
-  </form>
-</div>
+  <div>
+    <form id="contact-form" action="?login=1" method="post">
+      <ul style="list-style: none;">
+       <li>
+          <div class="label">
+            <label>E-Mail:</label>
+          </div>
+          <div class="field">
+            <input type="email" size="30" maxlength="250" name="email" class="text">
+          </div>
+          <div class="label">
+            <label>Passwod:</label>
+          </div>
+          <div class="field">
+            <input type="password" size="30" maxlength="250" name="passwort" class="text">
+          </div>
+          <div class="label">
+            <label>No Account?<a class="loginlink" href="register.php">Register</a>!</label>
+         </div>
+          <div class="submit">
+           <input type="submit" value="Login" class="button">
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
 
 </section>
 </div>
